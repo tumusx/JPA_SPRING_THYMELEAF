@@ -10,7 +10,7 @@
 	<main>
 
 		<section class="layout-content" layout:fragment="corpo">
-			<h1>Lista de Livros</h1>
+			<h1>Lista de Funcionarios</h1>
 
 			<div th:replace="fragments/message"></div>
 			
@@ -18,10 +18,10 @@
 				<thead class="thead-light">
 					<tr th:if="${!listaLivros.empty}">
 						<th scope="col">ID</th>
-						<th scope="col">ISBN</th>
-						<th scope="col">TÍTULO</th>
-						<th scope="col">CATEGORIA</th>
-						<th scope="col">EDITORA</th>
+						<th scope="col">NOME</th>
+						<th scope="col">SOBRENOME</th>
+						<th scope="col">DEPARTAMENTO</th>
+						<th scope="col">EMAIL</th>
 						<th style="width: 15px;" scope="col">&nbsp;</th>
 						<th style="width: 15px;" scope="col">&nbsp;</th>
 					</tr>
@@ -33,10 +33,10 @@
 					</tr>
 					<tr th:each="livro : ${listaLivros}">
 						<td th:text="${livro.id}">id</td>
-						<td th:text="${livro.isbn}">isbn</td>
-						<td th:text="${livro.titulo}">titulo</td>
-						<td th:text="${livro.categoria.nome}">categoria</td>
-						<td th:text="${livro.editora.nome}">editora</td>
+						<td th:text="${livro.nome}">isbn</td>
+						<td th:text="${livro.sobrenome}">titulo</td>
+						<td th:text="${livro.departamento.nome}">categoria</td>
+						<td th:text="${livro.email.email}">editora</td>
 
 						<td scope="row"><a
 							th:href="@{/livros/editar/{id} (id=${livro.id}) }">
